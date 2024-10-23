@@ -3,12 +3,19 @@
 import { useFormik } from "formik";
 import TextInput from "../components/common/TextInput";
 import { useTranslation } from "react-i18next";
-import { useSignInMutation } from "../lib/slices/authSlice";
+import { setToken, setUser, useSignInMutation } from "../lib/slices/authSlice";
 import { authSchema } from "../utils/validations/authValidation";
+import ErrorBadge from "../components/ErrorBadge";
+import { toast } from "react-toastify";
+import { AppDispatch } from "../lib/store";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [t] = useTranslation("global");
-    const [signin, { isLoading }] = useSignInMutation();
+    const navigate = useNavigate();
+    const dispatch: AppDispatch = useDispatch();
+    const [signin, { isLoading, isError }] = useSignInMutation();
     const { values, handleBlur, touched, handleChange, handleSubmit, errors } =
         useFormik({
             initialValues: {
@@ -20,9 +27,14 @@ const Login = () => {
                 try {
                     const response = await signin(value).unwrap();
                     if (response) {
-                        console.log(response);
+                        toast.success(t("login.success"));
+                        dispatch(setToken(response.accessToken));
+                        dispatch(setUser(response));
+                        navigate("/");
                     }
-                } catch (error) {}
+                } catch (error) {
+                    console.log(error);
+                }
             },
         });
     return (
@@ -32,7 +44,7 @@ const Login = () => {
                     {t("login.title")}
                 </h1>
                 <form
-                    className='w-full flex flex-col gap-4 px-8 py-6 border-gray-200 rounded-md shadow-md border dark:border-gray-100'
+                    className='w-full flex duration-300 transition-all ease-in-out flex-col gap-2 px-8 py-6 border-gray-200 rounded-md shadow-md border dark:border-gray-100'
                     onSubmit={handleSubmit}
                 >
                     <div>
@@ -60,11 +72,13 @@ const Login = () => {
                         />
                     </div>
                     <button
+                        disabled={isLoading}
                         className='text-sm py-2 w-full rounded-md hover:bg-slate-700 duration-300 font-semibold bg-gray-800 dark:bg-gray-100 text-white dark:text-gray-800'
                         type='submit'
                     >
                         {isLoading ? `loading ...` : t("login.button")}
                     </button>
+                    {isError && <ErrorBadge text={t("login.error")} />}
                 </form>
             </div>
         </div>

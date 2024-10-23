@@ -4,9 +4,11 @@
         "home": "Home |  Task managment"
     },
     "login": {
-        "username": "User name",
+        "username": "Username",
         "password": "Password",
         "button": "Sign in",
-        "title": "Welcome back"
+        "title": "Welcome back",
+        "error": "Invalid credentials",
+        "success": "Connected sucessfuly"
     }
 }
