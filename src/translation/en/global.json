@@ -1,0 +1,14 @@
+{
+    "pageTitle": {
+        "login": "Sign in | Task managment",
+        "home": "Home |  Task managment"
+    },
+    "login": {
+        "username": "Username",
+        "password": "Password",
+        "button": "Sign in",
+        "title": "Welcome back",
+        "error": "Invalid credentials",
+        "success": "Connected sucessfuly"
+    }
+}

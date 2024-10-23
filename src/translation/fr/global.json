@@ -1,0 +1,14 @@
+{
+    "pageTitle": {
+        "login": "Connexion | Gestion des tâches",
+        "home": "Accueil | Gestion des tâches"
+    },
+    "login": {
+        "username": "Nom d'utilisateur",
+        "password": "Mot de passe",
+        "button": "Connexion",
+        "title": "Content de te revoir",
+        "error": "Identifiants invalides",
+        "success": "Connecté avec succès"
+    }
+}
