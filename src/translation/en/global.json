@@ -1,0 +1,12 @@
+{
+    "pageTitle": {
+        "login": "Sign in | Task managment",
+        "home": "Home |  Task managment"
+    },
+    "login": {
+        "username": "User name",
+        "password": "Password",
+        "button": "Sign in",
+        "title": "Welcome back"
+    }
+}
