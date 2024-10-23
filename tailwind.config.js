@@ -8,10 +8,14 @@ export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     darkMode: "class",
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                montserrat: ["Montserrat", "sans-serif"],
+            },
+        },
         screen: {
             ...defaultTheme,
         },
     },
-    plugins: [require("daisyui")],
+    plugins: [],
 };
