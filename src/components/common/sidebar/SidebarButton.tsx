@@ -13,9 +13,9 @@ const SidebarButton: React.FC<{
         <Link
             className={`${
                 isActive
-                    ? "border-l-4 border-pink text-pink dark:text-white bg-light-pink"
+                    ? "border-l-4 border-pink text-pink dark:text-white bg-light-pink dark:bg-purple-950"
                     : "border-none"
-            } w-full py-4 flex justify-center text-gray-800 dark:text-gray-200 hover:bg-light-pink`}
+            } w-full py-4 flex justify-center duration-300 text-gray-800 dark:text-gray-200 hover:bg-light-pink dark:hover:bg-purple-950`}
             to={href}
         >
             <Icon size={20} />
