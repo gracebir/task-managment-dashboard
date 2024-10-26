@@ -6,9 +6,9 @@ import { GoMoon } from "react-icons/go";
 import { HiMiniSun } from "react-icons/hi2";
 import useColorMode from "../../hooks/useColorMode";
 import { IoNotificationsOutline } from "react-icons/io5";
-import { AiOutlineEye } from "react-icons/ai";
 import { HiLanguage } from "react-icons/hi2";
 import { LuChevronDown } from "react-icons/lu";
+import ViewProjectModal from "../ViewProjectModal";
 
 const languages = [
     { code: "en", name: "English" },
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
                     <input type='text' />
                 </div>
                 {/* button */}
-                <div className='flex items-center justify-between'>
+                <div className='flex items-center justify-end space-x-8'>
                     <div className='flex flex-row gap-6'>
                         <button
                             onClick={() => {
@@ -91,15 +91,12 @@ const Header: React.FC = () => {
                             <IoNotificationsOutline size={20} />
                         </button>
                     </div>
-
+                    <span className='text-gray-500 dark:text-gray-200'> |</span>
                     <div className='flex gap-6 items-center'>
                         <div className='flex items-center gap-2'>
-                            <button className='bg-gray-100 duration-300 text-gray-500 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-200 shadow-md flex items-center justify-center h-10 w-10 rounded-full'>
-                                <AiOutlineEye />
-                            </button>
-                            <span className='text-gray-500 dark:text-gray-200 text-sm font-semibold'>
+                            <button className='duration-300 text-sm hover:underline text-gray-500  dark:text-gray-200 '>
                                 {t("header.view")}
-                            </span>
+                            </button>
                         </div>
                         <div
                             id='google_translate_element'
@@ -147,6 +144,7 @@ const Header: React.FC = () => {
                     </div>
                 </div>
             </nav>
+            {/* <ViewProjectModal /> */}
         </header>
     );
 };
