@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { GoMoon } from "react-icons/go";
 import { HiMiniSun } from "react-icons/hi2";
+import { IoIosSearch } from "react-icons/io";
 import useColorMode from "../../hooks/useColorMode";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { HiLanguage } from "react-icons/hi2";
@@ -19,6 +20,7 @@ const Header: React.FC = () => {
     const [currentLang, setCurrentLang] = useState(languages[0]);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const [colorMode, setColorMode] = useColorMode();
+    const [isView, setIsView] = useState(false);
     console.log(colorMode);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [t, i18n] = useTranslation("global");
@@ -62,11 +64,16 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className='w-full bg-white dark:bg-secondary h-16 shadow-md border-gray-100 border-b dark:border-gray-800 px-6 lg:px-8'>
+        <header className='w-full bg-white dark:bg-secondary sticky top-0 z-20 h-20 shadow-md border-gray-100 border-b dark:border-gray-800 px-6 lg:px-8'>
             <nav className='grid grid-cols-2 h-full items-center'>
                 {/* search input */}
-                <div>
-                    <input type='text' />
+                <div className='flex text-gray-600 dark:text-gray-400 py-2 px-4 gap-2 rounded-2xl bg-blue-100 dark:bg-blue-950 items-center max-w-72'>
+                    <IoIosSearch size={19} />
+                    <input
+                        type='text'
+                        placeholder={t("header.search")}
+                        className='dark:bg-blue-950 bg-blue-100 text-sm outline-none border-none'
+                    />
                 </div>
                 {/* button */}
                 <div className='flex items-center justify-end space-x-8'>
@@ -94,13 +101,16 @@ const Header: React.FC = () => {
                     <span className='text-gray-500 dark:text-gray-200'> |</span>
                     <div className='flex gap-6 items-center'>
                         <div className='flex items-center gap-2'>
-                            <button className='duration-300 text-sm hover:underline text-gray-500  dark:text-gray-200 '>
+                            <button
+                                onClick={() => setIsView(true)}
+                                className='duration-300 text-sm hover:underline text-gray-500  dark:text-gray-200 '
+                            >
                                 {t("header.view")}
                             </button>
                         </div>
                         <div
                             id='google_translate_element'
-                            className={`relative text-white`}
+                            className={`relative dark:text-white text-gray-700`}
                             ref={dropdownRef}
                         >
                             <button
@@ -120,22 +130,28 @@ const Header: React.FC = () => {
                                 />
                             </button>
                             {isDropdownOpen && (
-                                <div className='absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                                <div className='absolute right-0 mt-2 w-40 bg-white dark:bg-blue-950 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
                                     <div className='py-1'>
                                         {languages.map((lang) => (
-                                            <button
+                                            <label
                                                 key={lang.code}
-                                                className={`block w-full text-left px-4 py-2 text-sm text-gray-700 ${
-                                                    currentLang.code ===
-                                                        lang.code &&
-                                                    "bg-primary text-white"
-                                                } hover:bg-primary hover:text-white`}
-                                                onClick={() =>
-                                                    selectLanguage(lang)
-                                                }
+                                                className={`flex items-center gap-2 px-4 py-2 text-sm cursor-pointer text-gray-700 dark:text-gray-300`}
                                             >
+                                                <input
+                                                    type='radio'
+                                                    name='language'
+                                                    value={lang.code}
+                                                    checked={
+                                                        currentLang.code ===
+                                                        lang.code
+                                                    }
+                                                    onChange={() =>
+                                                        selectLanguage(lang)
+                                                    }
+                                                    className='text-primary focus:ring-primary'
+                                                />
                                                 {lang.name}
-                                            </button>
+                                            </label>
                                         ))}
                                     </div>
                                 </div>
@@ -144,7 +160,7 @@ const Header: React.FC = () => {
                     </div>
                 </div>
             </nav>
-            {/* <ViewProjectModal /> */}
+            <ViewProjectModal isView={isView} setIsView={setIsView} />
         </header>
     );
 };

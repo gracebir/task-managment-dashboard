@@ -3,6 +3,12 @@
         "login": "Sign in | Task managment",
         "home": "Home |  Task managment"
     },
+    "header": {
+        "view": "View More",
+        "french": "French",
+        "english": "English",
+        "search": "Search"
+    },
     "login": {
         "username": "Username",
         "password": "Password",
