@@ -36,5 +36,25 @@
             "this-week": "This Week",
             "last-week": "Last Week"
         }
+    },
+    "task": {
+        "header": {
+            "workspace": "Workspace",
+            "creative": "Creative",
+            "creativeWebsite": "Creative Website",
+            "websiteDesign": "Website Design",
+            "limitedAccess": "Limited access",
+            "copyLink": "Copy Link",
+            "allTasks": "All Tasks",
+            "toDo": "To do",
+            "inProgress": "In Progress",
+            "completed": "Completed",
+            "filter": "Filter & Sort",
+            "task": "New Task"
+        },
+        "todo": {
+            "todo": "To do",
+            "completed": "Completed"
+        }
     }
 }
