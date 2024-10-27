@@ -1,27 +1,40 @@
 /** @format */
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { BiChevronDown, BiPlus } from "react-icons/bi";
 
 const users = [
-    { id: 1, name: "John Doe", image: "/placeholder.svg?height=32&width=32" },
-    { id: 2, name: "Jane Smith", image: "/placeholder.svg?height=32&width=32" },
+    {
+        id: 1,
+        name: "John Doe",
+        image: "https://avatar.iran.liara.run/public/boy",
+    },
+    {
+        id: 2,
+        name: "Jane Smith",
+        image: "https://avatar.iran.liara.run/public/girl",
+    },
     {
         id: 3,
         name: "Alice Johnson",
-        image: "/placeholder.svg?height=32&width=32",
+        image: "https://avatar.iran.liara.run/public/boy",
     },
-    { id: 4, name: "Bob Brown", image: "/placeholder.svg?height=32&width=32" },
+    {
+        id: 4,
+        name: "Bob Brown",
+        image: "https://avatar.iran.liara.run/public/boy",
+    },
 ];
 
 const ProjectHeader = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+    const [t] = useTranslation("global");
     return (
         <div className='flex justify-between items-center mb-4'>
             <div>
                 <h1 className='text-2xl font-bold text-gray-900 dark:text-white'>
-                    Website Design
+                    {t("task.header.websiteDesign")}
                 </h1>
                 <div className='flex items-center mt-2'>
                     <div className='relative'>
@@ -29,7 +42,7 @@ const ProjectHeader = () => {
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                             className='flex items-center px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                         >
-                            Limited access{" "}
+                            {t("task.header.limitedAccess")}{" "}
                             <BiChevronDown className='ml-2 h-4 w-4' />
                         </button>
                         {isDropdownOpen && (
