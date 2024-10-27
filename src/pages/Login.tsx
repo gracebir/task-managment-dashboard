@@ -38,13 +38,13 @@ const Login = () => {
             },
         });
     return (
-        <div className='min-h-svh flex items-center'>
+        <div className='min-h-svh bg-white dark:bg-primary-dark flex items-center'>
             <div className='max-w-sm mx-auto flex flex-col gap-6 w-full'>
-                <h1 className='text-center font-bold text-lg lg:text-xl'>
+                <h1 className='text-center text-gray-900 dark:text-gray-200 font-bold text-lg lg:text-xl'>
                     {t("login.title")}
                 </h1>
                 <form
-                    className='w-full flex duration-300 transition-all ease-in-out flex-col gap-2 px-8 py-6 border-gray-200 rounded-md shadow-md border dark:border-gray-100'
+                    className='w-full flex duration-300 transition-all ease-in-out flex-col gap-2 px-8 py-6 border-gray-200 rounded-md shadow-md border dark:border-gray-700'
                     onSubmit={handleSubmit}
                 >
                     <div>
@@ -67,7 +67,7 @@ const Login = () => {
                             name='password'
                             placeholder='********'
                             handleChange={handleChange}
-                            label='Password'
+                            label={t("login.password")}
                             type='password'
                         />
                     </div>

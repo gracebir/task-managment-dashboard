@@ -12,7 +12,7 @@ import NotFound from "./pages/NotFound";
 function App() {
     const [t] = useTranslation("global");
     return (
-        <div className='font-montserrat'>
+        <div className='font-montserrat overflow-x-hidden'>
             <Routes>
                 <Route
                     path='/login'

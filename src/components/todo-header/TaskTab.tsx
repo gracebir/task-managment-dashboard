@@ -4,10 +4,12 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { BiPlus } from "react-icons/bi";
 import { FiFilter } from "react-icons/fi";
+import CreateTodo from "../create-todo/CreateTodo";
 
 const TaskTabs = () => {
     const [activeTab, setActiveTab] = useState("all");
     const [t] = useTranslation("global");
+    const [isOpenModal, setIsModal] = useState(false);
     const tabs = [
         { id: "all", label: t("task.header.allTasks"), count: 23 },
         { id: "todo", label: t("task.header.toDo"), count: 3 },
@@ -17,7 +19,7 @@ const TaskTabs = () => {
 
     return (
         <div className='flex items-center justify-between border-b border-gray-200 dark:border-gray-700'>
-            <div className='flex'>
+            <div className='lg:flex hidden'>
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}
@@ -36,15 +38,19 @@ const TaskTabs = () => {
                 ))}
             </div>
             <div className='flex items-center'>
-                <button className='flex items-center px-3 py-1 mr-2 text-sm border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'>
+                <button className='flex items-center text-xs whitespace-nowrap px-3 py-1 mr-2 lg:text-sm border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'>
                     <FiFilter className='mr-2 h-4 w-4' />
                     {t("task.header.filter")}
                 </button>
-                <button className='flex items-center px-3 py-1 text-sm bg-indigo-600 dark:bg-indigo-500 text-white rounded-md hover:bg-indigo-700 dark:hover:bg-indigo-600'>
+                <button
+                    onClick={() => setIsModal(true)}
+                    className='flex items-center text-xs px-3 py-1 whitespace-nowrap lg:text-sm bg-indigo-600 dark:bg-indigo-500 text-white rounded-md hover:bg-indigo-700 dark:hover:bg-indigo-600'
+                >
                     <BiPlus className='mr-2 h-4 w-4' />
                     {t("task.header.task")}
                 </button>
             </div>
+            {isOpenModal && <CreateTodo setIsModal={setIsModal} />}
         </div>
     );
 };

@@ -1,7 +1,9 @@
 {
     "pageTitle": {
         "login": "Sign in | Task managment",
-        "home": "Home |  Task managment"
+        "home": "Home |  Task managment",
+        "task": "Task | Task managment",
+        "notfound": "404 |Task managment"
     },
     "header": {
         "view": "View More",
@@ -15,7 +17,8 @@
         "button": "Sign in",
         "title": "Welcome back",
         "error": "Invalid credentials",
-        "success": "Connected sucessfuly"
+        "success": "Connected sucessfuly",
+        "signout": "Sign out"
     },
     "home": {
         "stat": {
@@ -54,7 +57,18 @@
         },
         "todo": {
             "todo": "To do",
-            "completed": "Completed"
+            "completed": "Completed",
+            "maskAsCompleted": "Mark as completed",
+            "delete": "Delete",
+            "deleteMessage": "Task delete 😐",
+            "form": {
+                "title": "Create new Task",
+                "label": "Task Name",
+                "placeholder": "eg. Create Navigation...",
+                "button": "Add",
+                "success": "Task create succesfully",
+                "error": "An error occur"
+            }
         }
     }
 }

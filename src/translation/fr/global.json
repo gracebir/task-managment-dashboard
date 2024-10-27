@@ -2,7 +2,8 @@
     "pageTitle": {
         "login": "Connexion | Gestion des tâches",
         "home": "Accueil | Gestion des tâches",
-        "task": "Tache | "
+        "task": "Tache | Gestion des tâches",
+        "notfound": "404 | Gestion des tâches"
     },
     "header": {
         "view": "Voir plus",
@@ -16,7 +17,8 @@
         "button": "Connexion",
         "title": "Content de te revoir",
         "error": "Identifiants invalides",
-        "success": "Connecté avec succès"
+        "success": "Connecté avec succès",
+        "signout": "Se déconnecter"
     },
     "home": {
         "stat": {
@@ -55,7 +57,18 @@
         },
         "todo": {
             "todo": "A Faire",
-            "completed": "Fini"
+            "completed": "Fini",
+            "maskAsCompleted": "Terminé",
+            "delete": "Effacer",
+            "deleteMessage": "Suppression de la tâche 😐",
+            "form": {
+                "title": "Créer une nouvelle tâche",
+                "label": "Nom de la tâche",
+                "placeholder": "ex. Créer une navigation...",
+                "button": "Ajouter",
+                "success": "Tâche creer avec succes",
+                "error": "Une erreur se produit"
+            }
         }
     }
 }

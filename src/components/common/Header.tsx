@@ -9,7 +9,6 @@ import useColorMode from "../../hooks/useColorMode";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { HiLanguage } from "react-icons/hi2";
 import { LuChevronDown } from "react-icons/lu";
-import ViewProjectModal from "../ViewProjectModal";
 
 const languages = [
     { code: "en", name: "English" },
@@ -20,7 +19,6 @@ const Header: React.FC = () => {
     const [currentLang, setCurrentLang] = useState(languages[0]);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const [colorMode, setColorMode] = useColorMode();
-    const [isView, setIsView] = useState(false);
     console.log(colorMode);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [t, i18n] = useTranslation("global");
@@ -65,9 +63,9 @@ const Header: React.FC = () => {
 
     return (
         <header className='w-full bg-white dark:bg-secondary sticky top-0 z-20 h-20 shadow-md border-gray-100 border-b dark:border-gray-800 px-6 lg:px-8'>
-            <nav className='grid grid-cols-2 h-full items-center'>
+            <nav className='grid lg:grid-cols-2 grid-cols-1 h-full items-center'>
                 {/* search input */}
-                <div className='flex text-gray-600 dark:text-gray-400 py-2 px-4 gap-2 rounded-2xl bg-blue-100 dark:bg-blue-950 items-center max-w-72'>
+                <div className='lg:flex hidden text-gray-600 dark:text-gray-400 py-2 px-4 gap-2 rounded-2xl bg-blue-100 dark:bg-blue-950 items-center max-w-72'>
                     <IoIosSearch size={19} />
                     <input
                         type='text'
@@ -100,14 +98,6 @@ const Header: React.FC = () => {
                     </div>
                     <span className='text-gray-500 dark:text-gray-200'> |</span>
                     <div className='flex gap-6 items-center'>
-                        <div className='flex items-center gap-2'>
-                            <button
-                                onClick={() => setIsView(true)}
-                                className='duration-300 text-sm hover:underline text-gray-500  dark:text-gray-200 '
-                            >
-                                {t("header.view")}
-                            </button>
-                        </div>
                         <div
                             id='google_translate_element'
                             className={`relative dark:text-white text-gray-700`}
@@ -160,7 +150,6 @@ const Header: React.FC = () => {
                     </div>
                 </div>
             </nav>
-            <ViewProjectModal isView={isView} setIsView={setIsView} />
         </header>
     );
 };

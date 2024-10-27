@@ -16,7 +16,7 @@ function TaskManagment() {
     console.log(data);
     return (
         <DefaultLayout>
-            <main className='flex flex-col gap-6'>
+            <main className='flex flex-col gap-6 overflow-x-hidden'>
                 <div className='max-w-6xl p-6 text-gray-900 dark:text-white'>
                     <Breadcrumb />
                     <ProjectHeader />

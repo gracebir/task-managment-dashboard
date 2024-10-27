@@ -27,7 +27,7 @@ const TextInput: React.FC<InputType> = ({
                     onBlur={handleBlur}
                     placeholder={placeholder}
                     onChange={handleChange}
-                    className='w-full rounded-lg text-sm border border-stroke bg-transparent py-2 px-4 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary'
+                    className='w-full rounded-lg text-sm border border-stroke bg-transparent py-2 px-4 text-black outline-none focus:border-secondary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary'
                 />
             </div>
             {error && touched ? (

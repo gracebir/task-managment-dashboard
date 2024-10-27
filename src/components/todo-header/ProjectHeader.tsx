@@ -37,7 +37,7 @@ const ProjectHeader = () => {
                     {t("task.header.websiteDesign")}
                 </h1>
                 <div className='flex items-center mt-2'>
-                    <div className='relative'>
+                    <div className='relative hidden lg:block'>
                         <button
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                             className='flex items-center px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'
@@ -86,7 +86,7 @@ const ProjectHeader = () => {
                     </div>
                 </div>
             </div>
-            <div className='text-right'>
+            <div className='text-right hidden lg:block'>
                 <p className='text-sm text-gray-500 dark:text-gray-400'>
                     From 23 April
                 </p>

@@ -21,8 +21,28 @@ const getInitialToken = () => {
     return null;
 };
 
+const saveUserDataToLocalStorage = (userData: any) => {
+    if (typeof window !== "undefined") {
+        localStorage.setItem("task-user-data", JSON.stringify(userData));
+    }
+};
+
+const removeUserDataFromLocalStorage = () => {
+    if (typeof window !== "undefined") {
+        localStorage.removeItem("task-user-data");
+    }
+};
+
+const getInitialUserData = () => {
+    if (typeof window !== "undefined") {
+        const userData = localStorage.getItem("task-user-data");
+        return userData ? JSON.parse(userData) : null;
+    }
+    return null;
+};
+
 const initialState: TinitialState = {
-    user: null,
+    user: getInitialUserData(),
     token: getInitialToken(),
 };
 
@@ -53,16 +73,18 @@ const authSlice = createSlice({
         },
         setUser: (state, { payload }) => {
             state.user = payload;
+            saveUserDataToLocalStorage(payload);
         },
         logout: (state) => {
             state.user = null;
             state.token = null;
             removeTokenFromLocalStorage();
+            removeUserDataFromLocalStorage();
         },
     },
 });
 
-export const { useSignInMutation } = authApi;
-export const { setToken, setUser } = authSlice.actions;
+export const { useSignInMutation, useGetMeQuery } = authApi;
+export const { setToken, setUser, logout } = authSlice.actions;
 
 export default authSlice;
