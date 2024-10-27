@@ -4,10 +4,8 @@
 
 This project is a Todo Management application built using modern front-end technologies, including React, TypeScript, Redux Toolkit, and Tailwind CSS. The application is fully localized with `i18next` for internationalization support, and it includes user authentication.
 
-<Callout>
 **Username**: `emilys`  
 **Password**: `emilyspass`
-</Callout>
 
 ## Technologies Used
 
