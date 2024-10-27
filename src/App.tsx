@@ -5,6 +5,8 @@ import PageTitle from "./components/PageTitle";
 import { useTranslation } from "react-i18next";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import TaskManagment from "./pages/TaskManagment";
+import NotFound from "./pages/NotFound";
 
 /** @format */
 function App() {
@@ -27,6 +29,24 @@ function App() {
                         <>
                             <PageTitle title={t("pageTitle.home")} />
                             <Home />
+                        </>
+                    }
+                />
+                <Route
+                    path='/tasks'
+                    element={
+                        <>
+                            <PageTitle title={t("pageTitle.home")} />
+                            <TaskManagment />
+                        </>
+                    }
+                />
+                <Route
+                    path='*'
+                    element={
+                        <>
+                            <PageTitle title={t("pageTitle.home")} />
+                            <NotFound />
                         </>
                     }
                 />

@@ -1,7 +1,8 @@
 {
     "pageTitle": {
         "login": "Connexion | Gestion des tâches",
-        "home": "Accueil | Gestion des tâches"
+        "home": "Accueil | Gestion des tâches",
+        "task": "Tache | "
     },
     "header": {
         "view": "Voir plus",
@@ -16,5 +17,25 @@
         "title": "Content de te revoir",
         "error": "Identifiants invalides",
         "success": "Connecté avec succès"
+    },
+    "home": {
+        "stat": {
+            "total": "Vues totales",
+            "completed": "Tâches terminées",
+            "progress": "En cours",
+            "users": "Nombre total d'utilisateurs"
+        },
+        "chart": {
+            "total": "Total des tâches terminées",
+            "progress": "Total des tâches en cours",
+            "task-1": "Tâches 1",
+            "task-2": "Tâches 2",
+            "day": "Jour",
+            "week": "Semaine",
+            "month": "Mois",
+            "profit": "Réalisation cette semaine",
+            "this-week": "Cette semaine",
+            "last-week": "La semaine dernière"
+        }
     }
 }

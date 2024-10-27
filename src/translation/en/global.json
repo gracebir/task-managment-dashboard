@@ -16,5 +16,25 @@
         "title": "Welcome back",
         "error": "Invalid credentials",
         "success": "Connected sucessfuly"
+    },
+    "home": {
+        "stat": {
+            "total": "Total views",
+            "completed": "Completed Tasks",
+            "progress": "In Progress",
+            "users": "Total Users"
+        },
+        "chart": {
+            "total": "Total Tasks Completed",
+            "progress": " Total Tasks in Progress",
+            "task-1": "Task 1",
+            "task-2": "Task 2",
+            "day": "Day",
+            "week": "Week",
+            "month": "Month",
+            "profit": "Accomplishment this week",
+            "this-week": "This Week",
+            "last-week": "Last Week"
+        }
     }
 }
