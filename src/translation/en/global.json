@@ -1,0 +1,74 @@
+{
+    "pageTitle": {
+        "login": "Sign in | Task managment",
+        "home": "Home |  Task managment",
+        "task": "Task | Task managment",
+        "notfound": "404 |Task managment"
+    },
+    "header": {
+        "view": "View More",
+        "french": "French",
+        "english": "English",
+        "search": "Search"
+    },
+    "login": {
+        "username": "Username",
+        "password": "Password",
+        "button": "Sign in",
+        "title": "Welcome back",
+        "error": "Invalid credentials",
+        "success": "Connected sucessfuly",
+        "signout": "Sign out"
+    },
+    "home": {
+        "stat": {
+            "total": "Total views",
+            "completed": "Completed Tasks",
+            "progress": "In Progress",
+            "users": "Total Users"
+        },
+        "chart": {
+            "total": "Total Tasks Completed",
+            "progress": " Total Tasks in Progress",
+            "task-1": "Task 1",
+            "task-2": "Task 2",
+            "day": "Day",
+            "week": "Week",
+            "month": "Month",
+            "profit": "Accomplishment this week",
+            "this-week": "This Week",
+            "last-week": "Last Week"
+        }
+    },
+    "task": {
+        "header": {
+            "workspace": "Workspace",
+            "creative": "Creative",
+            "creativeWebsite": "Creative Website",
+            "websiteDesign": "Website Design",
+            "limitedAccess": "Limited access",
+            "copyLink": "Copy Link",
+            "allTasks": "All Tasks",
+            "toDo": "To do",
+            "inProgress": "In Progress",
+            "completed": "Completed",
+            "filter": "Filter & Sort",
+            "task": "New Task"
+        },
+        "todo": {
+            "todo": "To do",
+            "completed": "Completed",
+            "maskAsCompleted": "Mark as completed",
+            "delete": "Delete",
+            "deleteMessage": "Task delete 😐",
+            "form": {
+                "title": "Create new Task",
+                "label": "Task Name",
+                "placeholder": "eg. Create Navigation...",
+                "button": "Add",
+                "success": "Task create succesfully",
+                "error": "An error occur"
+            }
+        }
+    }
+}

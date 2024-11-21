@@ -1,0 +1,74 @@
+{
+    "pageTitle": {
+        "login": "Connexion | Gestion des tâches",
+        "home": "Accueil | Gestion des tâches",
+        "task": "Tache | Gestion des tâches",
+        "notfound": "404 | Gestion des tâches"
+    },
+    "header": {
+        "view": "Voir plus",
+        "french": "Français",
+        "english": "Anglais",
+        "search": "Recherche"
+    },
+    "login": {
+        "username": "Nom d'utilisateur",
+        "password": "Mot de passe",
+        "button": "Connexion",
+        "title": "Content de te revoir",
+        "error": "Identifiants invalides",
+        "success": "Connecté avec succès",
+        "signout": "Se déconnecter"
+    },
+    "home": {
+        "stat": {
+            "total": "Vues totales",
+            "completed": "Tâches terminées",
+            "progress": "En cours",
+            "users": "Nombre total d'utilisateurs"
+        },
+        "chart": {
+            "total": "Total des tâches terminées",
+            "progress": "Total des tâches en cours",
+            "task-1": "Tâches 1",
+            "task-2": "Tâches 2",
+            "day": "Jour",
+            "week": "Semaine",
+            "month": "Mois",
+            "profit": "Réalisation cette semaine",
+            "this-week": "Cette semaine",
+            "last-week": "La semaine dernière"
+        }
+    },
+    "task": {
+        "header": {
+            "workspace": "Espace de travail",
+            "creative": "Créatif",
+            "creativeWebsite": "Site Web créatif",
+            "websiteDesign": "Conception de site Web",
+            "limitedAccess": "Accès limité",
+            "copyLink": "Copier le lien",
+            "allTasks": "Toutes les tâches",
+            "toDo": "À faire",
+            "inProgress": "En cours",
+            "completed": "Terminé",
+            "filter": "Filtrer et trier",
+            "task": "Nouvelle tâche"
+        },
+        "todo": {
+            "todo": "A Faire",
+            "completed": "Fini",
+            "maskAsCompleted": "Terminé",
+            "delete": "Effacer",
+            "deleteMessage": "Suppression de la tâche 😐",
+            "form": {
+                "title": "Créer une nouvelle tâche",
+                "label": "Nom de la tâche",
+                "placeholder": "ex. Créer une navigation...",
+                "button": "Ajouter",
+                "success": "Tâche creer avec succes",
+                "error": "Une erreur se produit"
+            }
+        }
+    }
+}
